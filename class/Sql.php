@@ -14,16 +14,16 @@ class Sql extends PDO{
 	private function setParams($statment, $parameters = array()){
 
 		foreach($parameters as $key => $value){
-			$this->setParam($key, $value);
+			$this->setParam($statment, $key, $value);
 		}
 	}
 
 	/*
 	Essa função vai setar um parâmetro na statement
 	*/
-	private function setParam($statement, $key, $value){
+	private function setParam($statment, $key, $value){
 
-		$statmet->bindParam($key, $value);
+		$statment->bindParam($key, $value);
 	}
 	/*
 	Essa função query vai receber a query 'bruta' (que ainda será editada) e os parâmetros (em um array) para com isso sintetizar a query que será executada no banco.
